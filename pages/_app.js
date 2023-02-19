@@ -1,10 +1,11 @@
 import Nav from '@/components/Nav'
+import PrivateRoute from '@/components/PrivateRoute'
 import AuthContextProvider from '@/context/AuthContext'
 import '@/styles/globals.css'
 import '@/styles/nprogress.css'
 
 import { Dosis } from '@next/font/google'
-import { Router } from 'next/router'
+import { Router, useRouter } from 'next/router'
 import nProgress from 'nprogress'
 import { useEffect } from 'react'
 import { Toaster } from 'react-hot-toast'
@@ -12,6 +13,9 @@ import { Toaster } from 'react-hot-toast'
 const dosis = Dosis({ subsets: ['latin'] })
 
 export default function App({ Component, pageProps }) {
+  // Router
+  const { pathname } = useRouter()
+
   useEffect(() => {
     const handleStart = () => nProgress.start()
     const handleStop = () => nProgress.done()
@@ -31,7 +35,13 @@ export default function App({ Component, pageProps }) {
     <main className={dosis.className}>
       <AuthContextProvider>
         <Nav />
-        <Component {...pageProps} />
+        {pathname === '/mypolls' || pathname === '/create' ? (
+          <PrivateRoute>
+            <Component {...pageProps} />
+          </PrivateRoute>
+        ) : (
+          <Component {...pageProps} />
+        )}
       </AuthContextProvider>
       <Toaster />
     </main>
