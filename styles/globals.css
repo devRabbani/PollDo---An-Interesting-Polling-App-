@@ -3,8 +3,10 @@
   --color-primary-deep: #283e40;
   --color-primary-light: hsl(180, 15%, 80%);
   --color-secondary: #eb6440;
-  --color-white-1: hsl(180, 23%, 97%);
+  --color-white-1: #f6f9f9;
   --color-white-2: #d6e4e5;
+  --color-white-3: #eff5f5;
+  --color-white-4: #8cafb2;
 }
 
 /**
@@ -126,7 +128,8 @@ ol {
 }
 
 ::placeholder {
-  opacity: 0.5;
+  opacity: 0.6;
+  /* color: white; */
 }
 
 .wrapper {

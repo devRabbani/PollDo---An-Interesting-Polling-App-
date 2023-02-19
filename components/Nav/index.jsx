@@ -35,7 +35,7 @@ export default function Nav() {
     <nav>
       <div className={`wrapper ${s.nav}`}>
         <Link className={s.logo} href="/">
-          RaaiDo
+          PollDo
         </Link>
         <ul className={s.menulist}>
           <li className={`${s.menu} ${isHome ? s.active : null}`}>

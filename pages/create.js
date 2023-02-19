@@ -1,5 +1,9 @@
+import { useAuth } from '@/context/AuthContext'
 import s from '@/styles/Create.module.css'
+import { createPoll } from '@/utils/helper'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { toast } from 'react-hot-toast'
 import { MdOutlineRemoveCircleOutline } from 'react-icons/md'
 
 export default function Create() {
@@ -8,6 +12,12 @@ export default function Create() {
   const [options, setOptions] = useState(['', ''])
   const [privacy, setPrivacy] = useState('public')
   const [isCreating, setIsCreating] = useState(false)
+
+  // Router
+  const router = useRouter()
+
+  // getting user
+  const { user } = useAuth()
 
   // Custome Functions
   const addOption = () => {
@@ -29,10 +39,36 @@ export default function Create() {
     setOptions(list)
   }
 
+  // Handle Submit
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (!question.trim().length) {
+      toast.error(<b>Enter a valid poll question!</b>)
+      return
+    }
+
+    setIsCreating(true)
+    const id = toast.loading(<b>Creating Poll Please Wait</b>)
+    try {
+      const pollid = await createPoll(question.trim(), options, privacy, user)
+      if (pollid) {
+        setIsCreating(false)
+        toast.success(<b>Created Successfully</b>, { id })
+        router.push('/poll/' + pollid)
+      } else {
+        throw new Error('Something went wrong Try Again!')
+      }
+    } catch (error) {
+      console.log(error)
+      toast.error(<b>{error.message}</b>, { id })
+      setIsCreating(false)
+    }
+  }
+
   return (
     <div className={`wrapper ${s.createBody}`}>
       <h2 className="header">Create Poll </h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className={s.formDiv}>
           <label>Type Your Question</label>
           <textarea
@@ -56,6 +92,8 @@ export default function Create() {
               <input
                 onChange={(e) => handleChangeOption(e, i)}
                 type="text"
+                required
+                maxLength={50}
                 value={option}
                 placeholder={`Eg: Option ${i + 1}`}
               />
@@ -78,8 +116,8 @@ export default function Create() {
             <option value="private">Anonymous (Listed)</option>
           </select>
         </div>
-        <button className="btn full" type="submit">
-          Create Poll
+        <button disabled={isCreating} className="btn full" type="submit">
+          {isCreating ? 'Creating Wait' : 'Create Poll'}
         </button>
       </form>
     </div>

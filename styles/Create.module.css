@@ -28,6 +28,7 @@
   border-radius: 0.7rem;
   color: var(--color-primary-deep);
   background-color: transparent;
+  background-color: var(--color-white-3);
 }
 
 .createBody textarea:is(:active, :focus),
@@ -57,10 +58,4 @@
 /* For Btn Margin */
 .createBody select {
   margin-bottom: 1rem;
-}
-
-.avatar {
-  overflow: hidden;
-  background-color: var(--color-white-1);
-  border-radius: 50%;
 }
