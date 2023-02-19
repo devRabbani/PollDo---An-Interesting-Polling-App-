@@ -48,7 +48,13 @@ export default function App({ Component, pageProps }) {
             <Component {...pageProps} />
           )}
         </AuthContextProvider>
-        <Toaster />
+        <Toaster
+          toastOptions={{
+            style: {
+              fontSize: '1.7rem',
+            },
+          }}
+        />
       </main>
     </>
   )

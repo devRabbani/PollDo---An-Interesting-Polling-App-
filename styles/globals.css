@@ -1,13 +1,13 @@
 :root {
-  --color-primary: #497174;
-  --color-primary-deep: #283e40;
-  --color-primary-light: hsl(180, 15%, 80%);
-  --color-secondary: #eb6440;
+  --color-primary: #3b99b0;
+  --color-primary-deep: #283540;
+  --color-primary-light: #c4d4d4;
   --color-white-1: #f6f9f9;
   --color-white-2: #d6e4e5;
   --color-white-3: #eff5f5;
-  --color-white-4: hsl(180, 23%, 90%);
-  --color-green-1: #8cafb2;
+  --color-white-4: #e0ebeb;
+  --color-green: #9dafb0;
+  --color-blue: #6ecde4;
 }
 
 /**
@@ -42,9 +42,9 @@ main {
   overflow: auto;
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 0;
-} */
+}
 /*
   Typographic tweaks!
   4. Add accessible line-height
@@ -135,7 +135,7 @@ ol {
 
 .wrapper {
   width: 95%;
-  max-width: 900px;
+  max-width: 750px;
   margin-inline: auto;
 }
 
