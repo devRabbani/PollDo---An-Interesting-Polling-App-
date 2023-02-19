@@ -5,6 +5,7 @@ import '@/styles/globals.css'
 import '@/styles/nprogress.css'
 
 import { Dosis } from '@next/font/google'
+import Head from 'next/head'
 import { Router, useRouter } from 'next/router'
 import nProgress from 'nprogress'
 import { useEffect } from 'react'
@@ -32,18 +33,23 @@ export default function App({ Component, pageProps }) {
   }, [])
 
   return (
-    <main className={dosis.className}>
-      <AuthContextProvider>
-        <Nav />
-        {pathname === '/mypolls' || pathname === '/create' ? (
-          <PrivateRoute>
+    <>
+      <Head>
+        <title>PollDo</title>
+      </Head>
+      <main className={dosis.className}>
+        <AuthContextProvider>
+          <Nav />
+          {pathname === '/mypolls' || pathname === '/create' ? (
+            <PrivateRoute>
+              <Component {...pageProps} />
+            </PrivateRoute>
+          ) : (
             <Component {...pageProps} />
-          </PrivateRoute>
-        ) : (
-          <Component {...pageProps} />
-        )}
-      </AuthContextProvider>
-      <Toaster />
-    </main>
+          )}
+        </AuthContextProvider>
+        <Toaster />
+      </main>
+    </>
   )
 }

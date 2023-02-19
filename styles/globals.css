@@ -6,7 +6,8 @@
   --color-white-1: #f6f9f9;
   --color-white-2: #d6e4e5;
   --color-white-3: #eff5f5;
-  --color-white-4: #8cafb2;
+  --color-white-4: hsl(180, 23%, 90%);
+  --color-green-1: #8cafb2;
 }
 
 /**
@@ -164,7 +165,9 @@ textarea {
 nav {
   box-shadow: 0 -2px 18px rgba(0, 0, 0, 0.3);
   padding-block: 0.8rem;
-  position: relative;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 
 /* Header */

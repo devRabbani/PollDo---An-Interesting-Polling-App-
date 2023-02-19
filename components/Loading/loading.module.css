@@ -1,0 +1,9 @@
+.body {
+  display: grid;
+  place-items: center;
+  margin-top: 30vh;
+}
+
+.body svg {
+  width: 10rem;
+}

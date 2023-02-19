@@ -24,6 +24,7 @@ export default function Nav() {
   const { pathname } = useRouter()
   // Checking Home Page
   const isHome = pathname === '/'
+  const isCreate = pathname === '/create'
 
   // Getting Login Fxn and Loading
   const { login, isLoading } = useLogin()
@@ -41,8 +42,10 @@ export default function Nav() {
           <li className={`${s.menu} ${isHome ? s.active : null}`}>
             <Link href="/">{isHome ? <RiHome3Fill /> : <RiHome3Line />}</Link>
           </li>
-          <li className={`${s.menu} ${isHome ? null : s.active}`}>
-            <Link href="/create">{isHome ? <RiAddLine /> : <RiAddFill />}</Link>
+          <li className={`${s.menu} ${isCreate ? s.active : null}`}>
+            <Link href="/create">
+              {isCreate ? <RiAddFill /> : <RiAddLine />}
+            </Link>
           </li>
           <li>
             {user ? (

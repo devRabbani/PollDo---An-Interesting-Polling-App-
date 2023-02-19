@@ -1,3 +1,4 @@
+import FullLoading from '@/components/FullLoading'
 import { auth } from '@/lib/firebase'
 import AuthReducer from '@/reducers/authReducer'
 import { onAuthStateChanged } from 'firebase/auth'
@@ -25,7 +26,7 @@ export default function AuthContextProvider({ children }) {
   }, [])
 
   if (!state.isAuthReady) {
-    return <h1>Loading...</h1>
+    return <FullLoading />
   }
 
   return (

@@ -11,7 +11,7 @@ export default function usePollData(pollid) {
       doc(db, 'polls', pollid),
       (snapshot) => {
         if (snapshot.exists()) {
-          setData(snapshot.data())
+          setData({ ...snapshot.data(), pollid })
         } else {
           setData(null)
         }
