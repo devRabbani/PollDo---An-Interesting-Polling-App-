@@ -33,6 +33,10 @@ export const createPoll = async (question, options, privacy, user) => {
 }
 
 export const giveVote = async (pollid, uid, selected, setIsLoading) => {
+  if (!uid) {
+    toast.error(<b>Login first</b>)
+    return
+  }
   const id = toast.loading(<b>Submiting..</b>)
   setIsLoading(true)
   try {
