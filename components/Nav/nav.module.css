@@ -1,0 +1,47 @@
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  color: var(--color-primary);
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.menulist {
+  display: flex;
+  margin-left: auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.menu {
+  font-size: 2.6rem;
+  border-radius: 50%;
+  background-color: rgb(218, 225, 231);
+  background-color: var(--color-white-1);
+  padding: 0.9rem;
+}
+
+.menu.active {
+  background-color: var(--color-white-2);
+}
+
+.menu svg {
+  color: var(--color-primary-deep);
+}
+
+.authBtn {
+  font-size: 2rem;
+  margin-left: 1rem;
+  color: var(--color-primary-deep);
+}
+
+.avatar {
+  overflow: hidden;
+  margin-left: 1rem;
+  background-color: var(--color-white-1);
+  border-radius: 50%;
+}

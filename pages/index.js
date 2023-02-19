@@ -1,14 +1,32 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import { Dosis } from '@next/font/google'
+import s from '@/styles/Home.module.css'
+import useGetPolls from '@/hooks/useGetPolls'
+import PollCard from '@/components/PollCard'
+import Loading from '@/components/Loading'
 
 export default function Home() {
+  const { data, isLoading } = useGetPolls()
+
+  console.log(data, isLoading)
   return (
     <>
-      <h1>RaaiDO</h1>
+      <Head>
+        <title>Home | PollDo</title>
+      </Head>
+      <div className={`wrapper ${s.homeBody}`}>
+        <h2 className="header">Public Polls</h2>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <div className={s.pollsWrapper}>
+            {data.map((poll) => (
+              <PollCard key={poll.pollid} data={poll} />
+            ))}
+          </div>
+        )}
+      </div>
     </>
   )
 }
