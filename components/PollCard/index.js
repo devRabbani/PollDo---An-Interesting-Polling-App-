@@ -21,9 +21,7 @@ export default function PollCard({ data }) {
       <p className={s.createdBy}>
         Created by {privacy === 'anonyomous' ? 'Anonyomous' : createdBy}
       </p>
-      <h3>
-        <strong>Q. </strong> {question}
-      </h3>
+      <h3>Q. {question}</h3>
       <div className={s.optionsWrapper}>
         {Object.keys(options).map((option) => (
           <Option

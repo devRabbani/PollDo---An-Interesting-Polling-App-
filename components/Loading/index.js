@@ -38,7 +38,7 @@ export default function Loading() {
           cy="50"
           r="0"
           fill="none"
-          stroke="#497174"
+          stroke="#3b99b0"
           stroke-width="2"
         >
           <animate
@@ -66,5 +66,3 @@ export default function Loading() {
     </div>
   )
 }
-
-// style="margin: auto; background: rgb(255, 255, 255); display: block; shape-rendering: auto;"

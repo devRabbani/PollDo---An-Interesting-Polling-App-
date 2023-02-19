@@ -23,7 +23,7 @@
 .createBody input,
 .createBody select {
   font-size: 2rem;
-  padding: 1rem;
+  padding: 0.7rem 1rem 1rem;
   border: 1px solid var(--color-primary-light);
   border-radius: 0.7rem;
   color: var(--color-primary-deep);
@@ -34,7 +34,7 @@
 .createBody textarea:is(:active, :focus),
 .createBody select:is(:active, :focus),
 .createBody input:is(:active, :focus) {
-  border-color: var(--color-primary);
+  border-color: var(--color-primary-deep);
 }
 
 .optionsWrapper {
