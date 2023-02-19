@@ -1,0 +1,66 @@
+.createBody {
+  padding-block: 2rem;
+}
+
+.createBody form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+.formDiv label {
+  font-size: 1.8rem;
+  color: #7f8c8d;
+}
+
+.createBody textarea,
+.createBody input,
+.createBody select {
+  font-size: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--color-primary-light);
+  border-radius: 0.7rem;
+  color: var(--color-primary-deep);
+  background-color: transparent;
+}
+
+.createBody textarea:is(:active, :focus),
+.createBody select:is(:active, :focus),
+.createBody input:is(:active, :focus) {
+  border-color: var(--color-primary);
+}
+
+.optionsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.labelDiv {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.labelDiv svg {
+  color: red;
+  font-size: 2rem;
+}
+
+/* For Btn Margin */
+.createBody select {
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  overflow: hidden;
+  background-color: var(--color-white-1);
+  border-radius: 50%;
+}
