@@ -40,7 +40,7 @@ export default function App({ Component, pageProps }) {
       <main className={dosis.className}>
         <AuthContextProvider>
           <Nav />
-          {pathname === '/mypolls' ? (
+          {pathname === '/mypolls' || pathname === '/create' ? (
             <PrivateRoute>
               <Component {...pageProps} />
             </PrivateRoute>

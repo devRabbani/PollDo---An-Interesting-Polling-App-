@@ -51,6 +51,8 @@ export default function Nav() {
                   alt={user?.displayName}
                   height={44}
                   width={44}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8//VrPQAJDgNaKVw6EQAAAABJRU5ErkJggg=="
                 />
               </div>
             ) : (

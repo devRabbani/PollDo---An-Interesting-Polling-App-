@@ -12,7 +12,14 @@ export default function ImageScroller({ images, removeImage, edit }) {
       <div className={s.imageScroller}>
         {images.map((image, i) => (
           <div className={s.img} key={i}>
-            <Image src={image.img} alt="addad" fill />
+            <Image
+              src={image.img}
+              alt="Options"
+              sizes="70vw"
+              fill
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8//VrPQAJDgNaKVw6EQAAAABJRU5ErkJggg=="
+            />
             {edit ? (
               <span onClick={() => removeImage(i)} className={s.delete}>
                 <RiCloseFill />
