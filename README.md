@@ -1,6 +1,6 @@
-## PollDoh - An Interesting poll giving app with images
+## PollDoh - Get opinions in a snap with our app
 
-PollDoh - An Interesting poll giving app with images
+Create and share your opinions and polls with images on this app. Choose your privacy settings and share your polls with friends.
 
 Powered by [CanWeBe](https://canwebe.tech) , Made with mainly NextJs and Firebase
 
