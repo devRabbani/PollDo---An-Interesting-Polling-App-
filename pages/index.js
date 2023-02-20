@@ -1,14 +1,19 @@
 import Head from 'next/head'
 import s from '@/styles/Home.module.css'
-import useGetPolls from '@/hooks/useGetPolls'
 import PollCard from '@/components/PollCard'
 import Loading from '@/components/Loading'
 import { AiOutlineReload } from 'react-icons/ai'
+import { useRef } from 'react'
+import { usePolls } from '@/context/PollsContext'
 
 export default function Home() {
-  const { data, isLoading } = useGetPolls()
+  // const load = useRef()
+  const { polls, isLoading, loadMore, hasMore, btnLoading } = usePolls()
 
-  console.log(data, isLoading)
+  // const loadMore = () => {
+  //   setLoad(true)
+  // }
+
   return (
     <>
       <Head>
@@ -21,13 +26,17 @@ export default function Home() {
         ) : (
           <>
             <div className={s.pollsWrapper}>
-              {data.map((poll) => (
+              {polls.map((poll) => (
                 <PollCard key={poll.pollid} data={poll} />
               ))}
             </div>
-            <button className={s.loadMoreBtn}>
-              <AiOutlineReload /> Load More
-            </button>
+            {hasMore ? (
+              <button onClick={loadMore} className={s.loadMoreBtn}>
+                <AiOutlineReload /> {btnLoading ? 'Loading' : 'load'}
+              </button>
+            ) : (
+              <p>No More Poll</p>
+            )}
           </>
         )}
       </div>

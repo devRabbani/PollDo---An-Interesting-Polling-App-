@@ -48,7 +48,6 @@ export default function Create() {
   const handleRemove = (i) => {
     const list = [...options]
     list.splice(i, 1)
-    console.log(list)
     setOptions(list)
   }
 
