@@ -14,7 +14,8 @@ import s from './pollcard.module.css'
 import ImageScroller from '../ImageScroller'
 
 export default function PollCard({ data, isOwn }) {
-  const { question, options, given, createdBy, privacy, pollid, images } = data
+  const { question, options, given, createdBy, privacy, pollid, images } =
+    data ?? {}
 
   // Getting User
   const { user } = useAuth()

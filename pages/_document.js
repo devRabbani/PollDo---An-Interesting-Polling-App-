@@ -5,6 +5,16 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta name="theme-color" content="#32899e" />
+        <meta name="application-name" content="PollDoh" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="PollDoh" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-TileColor" content="#32899e" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <meta name="twitter:creator" content="@iamrrk_" />
         <meta
           name="description"
           content="Create and share your opinions and polls with images on this app. Choose your privacy settings and share your polls with friends."
@@ -13,12 +23,12 @@ export default function Document() {
           name="keywords"
           content="opinions, polls, images, privacy, sharing"
         />
-        <meta property="og:title" content="Opinion & Poll App" />
+        <meta property="og:title" content="PollDoh" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.example.com/" />
+        <meta property="og:url" content="https://polldoh.vercel.app/" />
         <meta
           property="og:image"
-          content="https://www.example.com/images/opinion-poll-app.jpg"
+          content="https://polldoh.vercel.app/android-chrome-512x512.png"
         />
         <meta
           property="og:description"

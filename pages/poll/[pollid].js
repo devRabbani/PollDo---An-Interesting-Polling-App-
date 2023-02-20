@@ -4,6 +4,7 @@ import PollCard from '@/components/PollCard'
 import usePollData from '@/hooks/usePollData'
 import Head from 'next/head'
 import Loading from '@/components/Loading'
+import Error404 from '../404'
 
 export default function Poll() {
   const router = useRouter()
@@ -12,6 +13,10 @@ export default function Poll() {
   } = router
 
   const { data, isLoading } = usePollData(pollid)
+
+  if (!data) {
+    return <Error404 />
+  }
 
   return (
     <>
