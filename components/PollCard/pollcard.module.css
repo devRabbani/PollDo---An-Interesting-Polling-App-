@@ -1,6 +1,6 @@
 .pollCard {
   padding-block: 1rem;
-  border-top: 1px solid var(--color-white-2);
+  border-top: 1px solid var(--color-border-white);
   margin-top: 2rem; /* Change baadme*/
 }
 
@@ -20,7 +20,7 @@
   font-size: 2rem;
   background-color: var(--color-white-1);
   padding: 0.5rem 0.9rem 0.5rem 1.1rem;
-  border: 0.1rem solid var(--color-white-2);
+  border: 0.1rem solid var(--color-border-white);
   text-transform: capitalize;
   border-radius: 0.7rem;
   cursor: pointer;
@@ -29,7 +29,7 @@
 .option.active {
   border-color: rgb(37, 153, 199);
   color: #277fa2;
-  background-color: var(--color-white-3);
+  background-color: var(--color-white-2);
 }
 
 .optionResult {
@@ -64,7 +64,7 @@
 }
 
 .clearBtn {
-  background-color: var(--color-white-4);
+  background-color: var(--color-border-white);
 }
 
 /* Is Result True */
@@ -76,14 +76,14 @@
 .createdBy {
   text-transform: capitalize;
   font-size: 1.5rem;
-  color: var(--color-green);
+  color: var(--color-text-light);
 }
 
 .progress {
   position: absolute;
   height: 100%;
   width: 0;
-  background-color: var(--color-blue);
+  background-color: var(--color-progress);
   left: 0;
   top: 0;
   border-radius: 0.7rem;
