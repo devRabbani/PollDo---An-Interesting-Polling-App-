@@ -12,6 +12,7 @@ import { AiOutlineDelete } from 'react-icons/ai'
 import Option from './option'
 import s from './pollcard.module.css'
 import ImageScroller from '../ImageScroller'
+import { usePolls } from '@/context/PollsContext'
 
 export default function PollCard({ data, isOwn }) {
   const { question, options, given, createdBy, privacy, pollid, images } =
@@ -19,6 +20,8 @@ export default function PollCard({ data, isOwn }) {
 
   // Getting User
   const { user } = useAuth()
+
+  const { dispatch } = usePolls()
 
   // Checking SUbmited
   const isResult = given?.includes(user?.uid)
@@ -36,7 +39,7 @@ export default function PollCard({ data, isOwn }) {
     <div className={s.pollCard}>
       <div className={s.pollCard_topbar}>
         <p className={s.createdBy}>
-          Created by {privacy === 'anonyomous' ? 'Anonyomous' : createdBy}
+          Created by {privacy === 'anonymous' ? 'Anonymous' : createdBy}
         </p>
         {isOwn ? (
           <button
@@ -86,7 +89,7 @@ export default function PollCard({ data, isOwn }) {
             <button
               disabled={isLoading}
               onClick={() =>
-                giveVote(pollid, user?.uid, selected, setIsLoading)
+                giveVote(pollid, user?.uid, selected, setIsLoading, dispatch)
               }
               className={s.submitBtn}
             >
