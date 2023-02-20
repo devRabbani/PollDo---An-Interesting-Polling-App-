@@ -41,11 +41,25 @@
   background-color: #eed7db;
   right: 0.7rem;
   color: var(--color-danger);
+  transition: all 0.2s ease-in;
+}
+
+.delete:active {
+  background-color: hsl(350, 40%, 79%);
 }
 
 .zoom {
   right: 0.7rem;
   font-size: 3rem;
+}
+
+@media (hover: hover) {
+  .delete:hover {
+    background-color: hsl(350, 40%, 84%);
+  }
+  .delete:active {
+    background-color: hsl(350, 40%, 79%);
+  }
 }
 
 @media screen and (min-width: 500px) {
