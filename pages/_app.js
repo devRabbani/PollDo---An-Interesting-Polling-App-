@@ -1,6 +1,7 @@
 import Nav from '@/components/Nav'
 import PrivateRoute from '@/components/PrivateRoute'
 import AuthContextProvider from '@/context/AuthContext'
+import PollsContextProvider from '@/context/PollsContext'
 import '@/styles/globals.css'
 import '@/styles/nprogress.css'
 
@@ -32,6 +33,18 @@ export default function App({ Component, pageProps }) {
     }
   }, [])
 
+  useEffect(() => {
+    console.log(
+      '%cCan%cWeBe!',
+      'color: #e47e24; font-size: 4.5em; font-weight: bolder; text-shadow: #000 1px 1px;',
+      'color: #fff; font-size: 4.5em; font-weight: bolder; text-shadow: #000 1px 1px;'
+    )
+    console.log(
+      '%cHey explorer!, Are you lost?? Because this is not the right place for you. If you want to work with us at CanWeBe contact us now.',
+      'color: #e1e1e1; font-size: 1.5em;'
+    )
+  }, [])
+
   return (
     <>
       <Head>
@@ -44,13 +57,15 @@ export default function App({ Component, pageProps }) {
       <main className={dosis.className}>
         <AuthContextProvider>
           <Nav />
-          {pathname === '/mypolls' || pathname === '/create' ? (
-            <PrivateRoute>
+          <PollsContextProvider>
+            {pathname === '/mypolls' || pathname === '/create' ? (
+              <PrivateRoute>
+                <Component {...pageProps} />
+              </PrivateRoute>
+            ) : (
               <Component {...pageProps} />
-            </PrivateRoute>
-          ) : (
-            <Component {...pageProps} />
-          )}
+            )}
+          </PollsContextProvider>
         </AuthContextProvider>
         <Toaster
           toastOptions={{

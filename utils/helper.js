@@ -1,6 +1,6 @@
 import { db, storage } from '@/lib/firebase'
+import { UPDATE_POLL_STATE } from '@/reducers/actions'
 import {
-  addDoc,
   arrayUnion,
   collection,
   deleteDoc,
@@ -72,7 +72,13 @@ export const createPoll = async (
   return docRef?.id
 }
 
-export const giveVote = async (pollid, uid, selected, setIsLoading) => {
+export const giveVote = async (
+  pollid,
+  uid,
+  selected,
+  setIsLoading,
+  dispatch
+) => {
   if (!uid) {
     toast.error(<b>Login first</b>)
     return
@@ -86,7 +92,7 @@ export const giveVote = async (pollid, uid, selected, setIsLoading) => {
       given: arrayUnion(uid),
       ['options.' + selected]: increment(1),
     })
-
+    dispatch({ type: UPDATE_POLL_STATE, payload: { uid, selected, pollid } })
     setIsLoading(false)
     toast.success(<b>Submitted Successfully</b>, { id })
   } catch (error) {
