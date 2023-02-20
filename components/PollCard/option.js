@@ -8,8 +8,6 @@ export default function Option({
   options,
   total,
 }) {
-  console.count('Option')
-
   if (isResult) {
     const percent = (options[option] / total) * 100
     const width = percent.toFixed(4)

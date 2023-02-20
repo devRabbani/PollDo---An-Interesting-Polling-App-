@@ -1,6 +1,5 @@
 import { db, storage } from '@/lib/firebase'
 import {
-  addDoc,
   arrayUnion,
   collection,
   deleteDoc,

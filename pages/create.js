@@ -86,8 +86,6 @@ export default function Create() {
     }
   }
 
-  console.log(attachments, 'attachments')
-
   return (
     <>
       <Head>

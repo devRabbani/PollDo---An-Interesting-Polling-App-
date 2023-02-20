@@ -3,7 +3,6 @@ import { RiCloseLine } from 'react-icons/ri'
 import s from './modal.module.css'
 
 export default function Modal({ img, setModalImg }) {
-  console.log(img)
   return img ? (
     <div className={s.modalBody}>
       <div className={s.img}>
