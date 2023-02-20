@@ -35,3 +35,9 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
+@media screen and (min-width: 750px) {
+  .img {
+    height: 100%;
+  }
+}

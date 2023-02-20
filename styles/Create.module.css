@@ -41,8 +41,7 @@
 }
 
 .optionsWrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1rem;
   margin-bottom: 0.5rem;
 }
@@ -67,6 +66,7 @@
 .addBtn,
 .addPhotoBtn {
   border-radius: 0.7rem;
+  transition: all 0.2s ease-in;
 }
 
 .createBtn {
@@ -94,4 +94,49 @@
   width: 9rem;
   border: 1px dashed var(--color-primary-deep);
   color: var(--color-primary-deep);
+}
+
+.createBtn:active {
+  background-color: hsl(192, 52%, 30%);
+}
+.addBtn:active {
+  border-color: hsl(192, 52%, 30%);
+  background-color: hsl(193, 92%, 86%);
+}
+.addPhotoBtn:active {
+  background-color: hsl(192, 52%, 93%);
+  border-style: solid;
+}
+
+@media (hover: hover) {
+  .createBtn:hover {
+    background-color: hsl(192, 52%, 37%);
+  }
+  .createBtn:active {
+    background-color: hsl(192, 52%, 30%);
+  }
+
+  .addBtn:hover {
+    border-color: hsl(192, 52%, 37%);
+    background-color: hsl(193, 92%, 91%);
+  }
+
+  .addBtn:active {
+    border-color: hsl(192, 52%, 30%);
+    background-color: hsl(193, 92%, 86%);
+  }
+
+  .addPhotoBtn:hover {
+    background-color: hsl(192, 52%, 97%);
+  }
+  .addPhotoBtn:active {
+    background-color: hsl(192, 52%, 93%);
+    border-style: solid;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .optionsWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
 }

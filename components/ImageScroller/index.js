@@ -15,7 +15,7 @@ export default function ImageScroller({ images, removeImage, edit }) {
             <Image
               src={image.img}
               alt="Options"
-              sizes="70vw"
+              sizes="(max-width:750px) 70vw,60vw"
               fill
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8//VrPQAJDgNaKVw6EQAAAABJRU5ErkJggg=="
