@@ -1,7 +1,7 @@
 .pollCard {
   padding-block: 1rem;
   border-top: 1px solid var(--color-border-white);
-  margin-top: 2rem; /* Change baadme*/
+  margin-top: 2rem;
 }
 
 .pollCard h3 {
@@ -27,7 +27,7 @@
 }
 
 .option.active {
-  border-color: rgb(37, 153, 199);
+  border-color: #2599c7;
   color: #277fa2;
   background-color: var(--color-white-2);
 }

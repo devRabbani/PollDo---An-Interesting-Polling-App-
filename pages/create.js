@@ -69,7 +69,7 @@ export default function Create() {
   return (
     <>
       <Head>
-        <title>CREATE | PollDo</title>
+        <title>CREATE | PollDoh</title>
       </Head>
       <div className={`wrapper ${s.createBody}`}>
         <h2 className="header">Create Poll </h2>

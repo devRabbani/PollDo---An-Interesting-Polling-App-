@@ -13,12 +13,10 @@ export default function Poll() {
 
   const { data, isLoading } = usePollData(pollid)
 
-  console.log(data, isLoading, 'Poll Data')
-
   return (
     <>
       <Head>
-        <title>Poll | PollDo</title>
+        <title>Poll | PollDoh</title>
       </Head>
       <div className={`wrapper ${s.pollBody}`}>
         <h2 className="header">Poll</h2>

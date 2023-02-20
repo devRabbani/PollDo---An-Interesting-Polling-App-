@@ -38,7 +38,7 @@ export default function Loading() {
           cy="50"
           r="0"
           fill="none"
-          stroke="#3b99b0"
+          stroke="#32899e"
           stroke-width="2"
         >
           <animate

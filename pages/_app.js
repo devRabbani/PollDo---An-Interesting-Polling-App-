@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>PollDo</title>
+        <title>PollDoh</title>
       </Head>
       <main className={dosis.className}>
         <AuthContextProvider>

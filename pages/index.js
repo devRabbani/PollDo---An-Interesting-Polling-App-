@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Dosis } from '@next/font/google'
 import s from '@/styles/Home.module.css'
 import useGetPolls from '@/hooks/useGetPolls'
 import PollCard from '@/components/PollCard'
@@ -13,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home | PollDo</title>
+        <title>Home | PollDoh</title>
       </Head>
       <div className={`wrapper ${s.homeBody}`}>
         <h2 className="header">Public Polls</h2>

@@ -1,7 +1,6 @@
 import { db } from '@/lib/firebase'
 import {
   collection,
-  doc,
   onSnapshot,
   orderBy,
   query,
@@ -32,7 +31,7 @@ export default function useGetMyPolls(uid) {
     })
 
     return () => unsub()
-  }, [])
+  }, [uid])
 
   return { data, isLoading }
 }
