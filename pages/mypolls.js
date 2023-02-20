@@ -11,11 +11,11 @@ export default function MyPolls() {
 
   // Getting My Polls
   const { data, isLoading } = useGetMyPolls(user?.uid)
-  console.log(data, isLoading, 'MyPolls')
+
   return (
     <>
       <Head>
-        <title>MyPolls | PollDo</title>
+        <title>MyPolls | PollDoh</title>
       </Head>
       <div className={`wrapper ${s.body}`}>
         <h2 className="header">My Polls</h2>
@@ -24,7 +24,7 @@ export default function MyPolls() {
         ) : data.length ? (
           <div className={s.pollsWrapper}>
             {data.map((poll) => (
-              <PollCard key={poll.pollid} data={poll} />
+              <PollCard key={poll.pollid} data={poll} isOwn={true} />
             ))}
           </div>
         ) : (

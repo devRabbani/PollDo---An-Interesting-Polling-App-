@@ -4,7 +4,7 @@ export default function FullLoading() {
   return (
     <div className={s.body}>
       <div className={s.loadingDiv}>
-        <p className={s.loading}>PollDo</p>
+        <p className={s.loading}>PollDoh</p>
         <span>Loading</span>
       </div>
     </div>

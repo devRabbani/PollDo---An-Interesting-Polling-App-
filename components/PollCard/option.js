@@ -13,12 +13,12 @@ export default function Option({
   if (isResult) {
     const percent = (options[option] / total) * 100
     const width = percent.toFixed(4)
-    console.log(percent)
+
     return (
       <div className={s.optionResult}>
         <div style={{ width: width + '%' }} className={s.progress} />
         {option}
-        <span className={s.percentage}>{percent.toFixed(1)}%</span>
+        <span className={s.percentage}>{percent.toFixed(0)}%</span>
       </div>
     )
   }

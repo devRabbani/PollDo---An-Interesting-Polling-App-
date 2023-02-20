@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta name="theme-color" content="#5f59f7" />
+        <meta name="theme-color" content="#32899e" />
         <meta
           name="description"
           content="It is an ineteresting polling or voting app"

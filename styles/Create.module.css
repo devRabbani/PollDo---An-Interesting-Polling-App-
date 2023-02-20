@@ -1,5 +1,5 @@
 .createBody {
-  padding-block: 2rem;
+  padding-block: 2rem 5rem;
 }
 
 .createBody form {
@@ -24,17 +24,20 @@
 .createBody select {
   font-size: 2rem;
   padding: 0.7rem 1rem 1rem;
-  border: 1px solid var(--color-primary-light);
+  border: 1px solid var(--color-input-border);
   border-radius: 0.7rem;
-  color: var(--color-primary-deep);
-  background-color: transparent;
-  background-color: var(--color-white-3);
+  color: var(--color-text);
+  background-color: var(--color-white-2);
+}
+
+.createBody input[type='file'] {
+  display: none;
 }
 
 .createBody textarea:is(:active, :focus),
 .createBody select:is(:active, :focus),
 .createBody input:is(:active, :focus) {
-  border-color: var(--color-primary-deep);
+  border-color: var(--color-text);
 }
 
 .optionsWrapper {
@@ -51,11 +54,44 @@
 }
 
 .labelDiv svg {
-  color: red;
+  color: var(--color-danger);
   font-size: 2rem;
 }
 
 /* For Btn Margin */
 .createBody select {
   margin-bottom: 1rem;
+}
+
+.createBtn,
+.addBtn,
+.addPhotoBtn {
+  border-radius: 0.7rem;
+}
+
+.createBtn {
+  background-color: var(--color-primary);
+  color: white;
+  padding-block: 0.9rem;
+  border-radius: 0.7rem;
+}
+
+.addBtn,
+.addPhotoBtn {
+  font-size: 1.5rem;
+  padding-block: 0.8rem;
+  color: var(--color-text);
+}
+
+.addBtn {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  width: 11rem;
+  background-color: #e7f9fe;
+}
+
+.addPhotoBtn {
+  width: 9rem;
+  border: 1px dashed var(--color-primary-deep);
+  color: var(--color-primary-deep);
 }

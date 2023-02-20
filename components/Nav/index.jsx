@@ -1,12 +1,5 @@
 import Link from 'next/link'
-import {
-  RiAddCircleFill,
-  RiAddCircleLine,
-  RiAddFill,
-  RiAddLine,
-  RiHome3Fill,
-  RiHome3Line,
-} from 'react-icons/ri'
+import { RiAddFill, RiAddLine, RiHome3Fill, RiHome3Line } from 'react-icons/ri'
 import { FaHourglassHalf, FaSignInAlt } from 'react-icons/fa'
 import s from './nav.module.css'
 import { useRouter } from 'next/router'
@@ -36,7 +29,7 @@ export default function Nav() {
     <nav>
       <div className={`wrapper ${s.nav}`}>
         <Link className={s.logo} href="/">
-          PollDo
+          PollDoh
         </Link>
         <ul className={s.menulist}>
           <li className={`${s.menu} ${isHome ? s.active : null}`}>
@@ -58,6 +51,8 @@ export default function Nav() {
                   alt={user?.displayName}
                   height={44}
                   width={44}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8//VrPQAJDgNaKVw6EQAAAABJRU5ErkJggg=="
                 />
               </div>
             ) : (
