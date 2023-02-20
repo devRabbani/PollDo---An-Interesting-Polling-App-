@@ -1,0 +1,42 @@
+.imageScroller {
+  display: flex;
+  overflow-x: scroll;
+  gap: 1rem;
+}
+
+.img {
+  position: relative;
+  width: 70%;
+  height: 200px;
+  flex-shrink: 0;
+  background-color: var(--color-white-2);
+}
+
+.img img {
+  object-fit: contain;
+}
+
+.option,
+.delete {
+  width: 3.4rem;
+  height: 3.4rem;
+  font-size: 2rem;
+  position: absolute;
+  bottom: 0.7rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 500;
+}
+
+.option {
+  background-color: var(--color-primary);
+  left: 0.7rem;
+  color: white;
+}
+
+.delete {
+  background-color: #eed7db;
+  right: 0.7rem;
+  color: var(--color-danger);
+}

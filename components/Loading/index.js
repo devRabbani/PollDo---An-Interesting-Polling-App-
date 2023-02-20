@@ -10,7 +10,7 @@ export default function Loading() {
           r="0"
           fill="none"
           stroke="#cfd5d5"
-          stroke-width="2"
+          strokeWidth="2"
         >
           <animate
             attributeName="r"
@@ -39,7 +39,7 @@ export default function Loading() {
           r="0"
           fill="none"
           stroke="#32899e"
-          stroke-width="2"
+          strokeWidth="2"
         >
           <animate
             attributeName="r"

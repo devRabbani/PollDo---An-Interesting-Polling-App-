@@ -18,11 +18,14 @@ export default function Home() {
         {isLoading ? (
           <Loading />
         ) : (
-          <div className={s.pollsWrapper}>
-            {data.map((poll) => (
-              <PollCard key={poll.pollid} data={poll} />
-            ))}
-          </div>
+          <>
+            <div className={s.pollsWrapper}>
+              {data.map((poll) => (
+                <PollCard key={poll.pollid} data={poll} />
+              ))}
+            </div>
+            <button className={s.loadMoreBtn}>Load More</button>
+          </>
         )}
       </div>
     </>

@@ -1,11 +1,15 @@
+import AttachImages from '@/components/AttachImages'
+import ImageScroller from '@/components/ImageScroller'
 import { useAuth } from '@/context/AuthContext'
 import s from '@/styles/Create.module.css'
 import { createPoll } from '@/utils/helper'
 import Head from 'next/head'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { toast } from 'react-hot-toast'
+import { BiImageAdd } from 'react-icons/bi'
 import { MdOutlineRemoveCircleOutline } from 'react-icons/md'
+import { RiImageAddFill } from 'react-icons/ri'
 
 export default function Create() {
   // Local States
@@ -13,6 +17,7 @@ export default function Create() {
   const [options, setOptions] = useState(['', ''])
   const [privacy, setPrivacy] = useState('public')
   const [isCreating, setIsCreating] = useState(false)
+  const [attachments, setAttachments] = useState([])
 
   // Router
   const router = useRouter()
@@ -32,6 +37,13 @@ export default function Create() {
     setOptions(list)
   }
 
+  // Remove Image
+  const removeImage = (i) => {
+    const list = [...attachments]
+    list.splice(i, 1)
+    setAttachments(list)
+  }
+
   // Remove Options
   const handleRemove = (i) => {
     const list = [...options]
@@ -47,11 +59,19 @@ export default function Create() {
       toast.error(<b>Enter a valid poll question!</b>)
       return
     }
-
     setIsCreating(true)
     const id = toast.loading(<b>Creating Poll Please Wait</b>)
     try {
-      const pollid = await createPoll(question.trim(), options, privacy, user)
+      // if(attachments?.length){
+
+      // }
+      const pollid = await createPoll(
+        question.trim(),
+        options,
+        privacy,
+        user,
+        attachments
+      )
       if (pollid) {
         setIsCreating(false)
         toast.success(<b>Created Successfully</b>, { id })
@@ -65,6 +85,8 @@ export default function Create() {
       setIsCreating(false)
     }
   }
+
+  console.log(attachments, 'attachments')
 
   return (
     <>
@@ -83,6 +105,18 @@ export default function Create() {
               placeholder="Eg: What is best React or NextJs"
             />
           </div>
+          {attachments.length > 0 ? (
+            <ImageScroller
+              images={attachments}
+              removeImage={removeImage}
+              edit={true}
+            />
+          ) : null}
+
+          <AttachImages
+            attachments={attachments}
+            setAttachments={setAttachments}
+          />
           <div className={s.optionsWrapper}>
             {options.map((option, i) => (
               <div key={i} className={s.formDiv}>
@@ -98,7 +132,7 @@ export default function Create() {
                   onChange={(e) => handleChangeOption(e, i)}
                   type="text"
                   required
-                  maxLength={50}
+                  maxLength={40}
                   value={option}
                   placeholder={`Eg: Option ${i + 1}`}
                 />
@@ -107,7 +141,7 @@ export default function Create() {
           </div>
           <button
             disabled={options.length > 4}
-            className="btn"
+            className={s.addBtn}
             onClick={addOption}
             type="button"
           >
@@ -124,7 +158,7 @@ export default function Create() {
               <option value="anonymous">Anonymous (Listed)</option>
             </select>
           </div>
-          <button disabled={isCreating} className="btn full" type="submit">
+          <button disabled={isCreating} className={s.createBtn} type="submit">
             {isCreating ? 'Creating Wait' : 'Create Poll'}
           </button>
         </form>

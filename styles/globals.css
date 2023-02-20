@@ -1,6 +1,7 @@
 :root {
-  --color-primary: #32899e;
-  --color-active-menu: #bfe4e7;
+  --color-primary: #32899f;
+  --color-primary-deep: #266878;
+  --color-active-menu: #cfecee;
   --color-text: #283540;
   --color-text-light: #9dafb0;
   --color-progress: #67c2d8;
@@ -8,6 +9,7 @@
   --color-input-border: #c4d4d4;
   --color-white-1: #f6f9f9;
   --color-white-2: #eff5f5;
+  --color-danger: #cb2453;
 }
 
 /**
@@ -168,6 +170,7 @@ nav {
   position: sticky;
   top: 0;
   background-color: white;
+  z-index: 999;
 }
 
 /* Header */
@@ -177,16 +180,4 @@ nav {
   width: fit-content;
   margin-bottom: 1rem;
   padding-bottom: 0.2rem;
-}
-
-.btn {
-  background-color: var(--color-primary);
-  color: white;
-  padding: 0.9rem 2rem;
-  border-radius: 0.7rem;
-  width: 15rem;
-}
-
-.btn.full {
-  width: 100%;
 }

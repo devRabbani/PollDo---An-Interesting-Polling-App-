@@ -24,7 +24,7 @@ export default function MyPolls() {
         ) : data.length ? (
           <div className={s.pollsWrapper}>
             {data.map((poll) => (
-              <PollCard key={poll.pollid} data={poll} />
+              <PollCard key={poll.pollid} data={poll} isOwn={true} />
             ))}
           </div>
         ) : (
