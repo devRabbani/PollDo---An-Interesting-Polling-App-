@@ -96,40 +96,40 @@
   color: var(--color-primary-deep);
 }
 
-.createBtn:active {
+.createBtn:not(:disabled):active {
   background-color: hsl(192, 52%, 30%);
 }
-.addBtn:active {
+.addBtn:not(:disabled):active {
   border-color: hsl(192, 52%, 30%);
   background-color: hsl(193, 92%, 86%);
 }
-.addPhotoBtn:active {
+.addPhotoBtn:not(:disabled):active {
   background-color: hsl(192, 52%, 93%);
   border-style: solid;
 }
 
 @media (hover: hover) {
-  .createBtn:hover {
+  .createBtn:not(:disabled):hover {
     background-color: hsl(192, 52%, 37%);
   }
-  .createBtn:active {
+  .createBtn:not(:disabled):active {
     background-color: hsl(192, 52%, 30%);
   }
 
-  .addBtn:hover {
+  .addBtn:not(:disabled):hover {
     border-color: hsl(192, 52%, 37%);
     background-color: hsl(193, 92%, 91%);
   }
 
-  .addBtn:active {
+  .addBtn:not(:disabled):active {
     border-color: hsl(192, 52%, 30%);
     background-color: hsl(193, 92%, 86%);
   }
 
-  .addPhotoBtn:hover {
+  .addPhotoBtn:not(:disabled):hover {
     background-color: hsl(192, 52%, 97%);
   }
-  .addPhotoBtn:active {
+  .addPhotoBtn:not(:disabled):active {
     background-color: hsl(192, 52%, 93%);
     border-style: solid;
   }
