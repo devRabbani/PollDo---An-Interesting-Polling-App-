@@ -22,6 +22,7 @@
   justify-content: flex-start;
   white-space: nowrap;
   gap: 0.5rem;
+  cursor: pointer;
 }
 
 .menu:global(.active) {
