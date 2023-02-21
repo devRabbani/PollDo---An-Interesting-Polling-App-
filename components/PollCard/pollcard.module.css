@@ -48,9 +48,15 @@
 .pollCard_bottomDiv {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 1.2rem;
   margin-top: 2rem;
   min-height: 3.76rem;
+}
+
+.totalVotes,
+.given {
+  line-height: 1;
 }
 
 .totalVotes {
@@ -106,6 +112,13 @@
 .shareBtn:disabled,
 .deleteBtn:disabled {
   opacity: 1;
+}
+
+.given {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--color-text-light);
 }
 
 /* Is Result True */
