@@ -77,7 +77,8 @@ export const giveVote = async (
   uid,
   selected,
   setIsLoading,
-  dispatch
+  dispatch,
+  isSingle
 ) => {
   if (!uid) {
     toast.error(<b>You need to Login first!!</b>)
@@ -92,7 +93,8 @@ export const giveVote = async (
       given: arrayUnion(uid),
       ['options.' + selected]: increment(1),
     })
-    dispatch({ type: UPDATE_POLL_STATE, payload: { uid, selected, pollid } })
+    !isSingle &&
+      dispatch({ type: UPDATE_POLL_STATE, payload: { uid, selected, pollid } })
     setIsLoading(false)
     toast.success(<b>Submitted Successfully</b>, { id })
   } catch (error) {
@@ -124,21 +126,24 @@ export const handleShare = async (text, url, setIsSharing) => {
 }
 
 export const handleDelete = async (images, pollid, setIsDeleting) => {
-  const id = toast.loading(<b>Deleting please wait</b>)
-  try {
-    setIsDeleting(true)
-    if (images?.length) {
-      const promises = images.map((image) => {
-        return deleteObject(ref(storage, image.fileName))
-      })
-      await Promise.all(promises)
+  const isConfirm = confirm('Are you sure you want to delete this poll?')
+  if (isConfirm) {
+    const id = toast.loading(<b>Deleting please wait</b>)
+    try {
+      setIsDeleting(true)
+      if (images?.length) {
+        const promises = images.map((image) => {
+          return deleteObject(ref(storage, image.fileName))
+        })
+        await Promise.all(promises)
+      }
+      await deleteDoc(doc(db, 'polls', pollid))
+      setIsDeleting(false)
+      toast.success(<b>Deleted Successfully</b>, { id })
+    } catch (error) {
+      console.log(error)
+      toast.error(<b>{error.message}</b>, { id })
+      setIsDeleting(false)
     }
-    await deleteDoc(doc(db, 'polls', pollid))
-    setIsDeleting(false)
-    toast.success(<b>Deleted Successfully</b>, { id })
-  } catch (error) {
-    console.log(error)
-    toast.error(<b>{error.message}</b>, { id })
-    setIsDeleting(false)
   }
 }

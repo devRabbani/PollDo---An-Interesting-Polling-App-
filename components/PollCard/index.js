@@ -7,7 +7,7 @@ import s from './pollcard.module.css'
 import ImageScroller from '../ImageScroller'
 import { usePolls } from '@/context/PollsContext'
 
-export default function PollCard({ data, isOwn }) {
+export default function PollCard({ data, isOwn, isSingle }) {
   const { question, options, given, createdBy, privacy, pollid, images } =
     data ?? {}
 
@@ -82,7 +82,14 @@ export default function PollCard({ data, isOwn }) {
             <button
               disabled={isLoading}
               onClick={() =>
-                giveVote(pollid, user?.uid, selected, setIsLoading, dispatch)
+                giveVote(
+                  pollid,
+                  user?.uid,
+                  selected,
+                  setIsLoading,
+                  dispatch,
+                  isSingle
+                )
               }
               className={s.submitBtn}
             >
