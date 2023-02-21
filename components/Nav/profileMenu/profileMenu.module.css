@@ -1,10 +1,10 @@
 .profileMenu {
   background-color: white;
   box-shadow: 0 -3px 28px rgba(0, 0, 0, 0.2);
-  min-width: 15rem;
+  min-width: 17rem;
   position: absolute;
   right: 0;
-  top: 133%;
+  top: 134%;
   padding: 1.5rem 2rem 1.7rem;
   border-radius: 0.7rem;
   display: flex;
@@ -15,7 +15,7 @@
 }
 
 .menu {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   display: flex;
   align-items: center;
   width: 100%;
@@ -32,5 +32,5 @@
 }
 
 .profileMenu button.menu {
-  color: red;
+  color: var(--color-danger);
 }
