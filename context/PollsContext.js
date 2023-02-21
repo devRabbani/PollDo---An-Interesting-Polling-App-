@@ -71,7 +71,7 @@ export default function PollsContextProvider({ children }) {
       collection(db, 'polls'),
       where('listed', '==', true),
       orderBy('createdAt', 'desc'),
-      limit(2)
+      limit(LIMIT)
     )
 
     const snapshot = await getDocs(q)
