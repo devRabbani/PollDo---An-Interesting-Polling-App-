@@ -38,10 +38,14 @@
   color: var(--color-text);
 }
 
+.menu,
+.avatar {
+  cursor: pointer;
+}
+
 .avatar {
   overflow: hidden;
   margin-left: 1rem;
   background-color: var(--color-border-white);
   border-radius: 50%;
-  cursor: pointer;
 }

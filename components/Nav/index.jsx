@@ -8,6 +8,7 @@ import { useAuth } from '@/context/AuthContext'
 import Image from 'next/image'
 import { useState } from 'react'
 import ProfileMenu from './profileMenu'
+import { toast } from 'react-hot-toast'
 
 export default function Nav() {
   // State
@@ -36,9 +37,17 @@ export default function Nav() {
             <Link href="/">{isHome ? <RiHome3Fill /> : <RiHome3Line />}</Link>
           </li>
           <li className={`${s.menu} ${isCreate ? s.active : null}`}>
-            <Link href="/create">
-              {isCreate ? <RiAddFill /> : <RiAddLine />}
-            </Link>
+            {user ? (
+              <Link href="/create">
+                {isCreate ? <RiAddFill /> : <RiAddLine />}
+              </Link>
+            ) : (
+              <div
+                onClick={() => toast.error(<b>You need to login first!!</b>)}
+              >
+                <RiAddLine />
+              </div>
+            )}
           </li>
           <li>
             {user ? (
