@@ -1,5 +1,6 @@
 import { useAuth } from '@/context/AuthContext'
 import { auth, googleProvider } from '@/lib/firebase'
+import { LOGIN } from '@/reducers/actions'
 import { signInWithPopup } from 'firebase/auth'
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
@@ -15,7 +16,7 @@ export default function useLogin() {
       setIsLoading(true)
       const user = await signInWithPopup(auth, googleProvider)
       if (user) {
-        dispatch({ type: 'LOGIN', payload: user.user })
+        dispatch({ type: LOGIN, payload: user.user })
         toast.success(<b>Welcome {user?.user?.displayName}</b>, { id })
         setIsLoading(false)
       } else {

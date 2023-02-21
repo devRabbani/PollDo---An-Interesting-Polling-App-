@@ -28,14 +28,14 @@
   background-color: var(--color-active-menu);
 }
 
-.menu svg {
-  color: var(--color-text);
+.avatarDiv {
+  position: relative;
 }
 
 .authBtn {
   font-size: 1.7rem;
   margin-left: 0.5rem;
-  color: var(--color-text);
+  font-weight: 500;
 }
 
 .menu,

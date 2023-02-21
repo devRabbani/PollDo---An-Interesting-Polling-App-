@@ -1,11 +1,9 @@
 import { RiImageAddFill } from 'react-icons/ri'
 import s from '@/styles/Create.module.css'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { toast } from 'react-hot-toast'
 
 export default function AttachImages({ attachments, setAttachments }) {
-  // Local States
-  // const [attachments, setAttachments] = useState([])
   // File Ref
   const fileRef = useRef()
   // Handle Files Change
@@ -46,7 +44,6 @@ export default function AttachImages({ attachments, setAttachments }) {
       }
     }
     setAttachments(added)
-    // e.target.value = null
     fileRef.current.value = ''
   }
 

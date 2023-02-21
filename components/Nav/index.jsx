@@ -1,18 +1,20 @@
 import Link from 'next/link'
 import { RiAddFill, RiAddLine, RiHome3Fill, RiHome3Line } from 'react-icons/ri'
-import { FaHourglassHalf, FaSignInAlt } from 'react-icons/fa'
 import s from './nav.module.css'
 import { useRouter } from 'next/router'
 import useLogin from '@/hooks/useLogin'
 import { useAuth } from '@/context/AuthContext'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import ProfileMenu from './profileMenu'
 import { toast } from 'react-hot-toast'
+import { MdHourglassEmpty, MdLogin } from 'react-icons/md'
 
 export default function Nav() {
   // State
   const [isMenu, setIsMenu] = useState(false)
+  // Avatar Ref
+  const avatarRef = useRef()
 
   // Router
   const { pathname } = useRouter()
@@ -49,10 +51,11 @@ export default function Nav() {
               </div>
             )}
           </li>
-          <li>
+          <li className={s.avatarDiv}>
             {user ? (
               <div
                 className={s.avatar}
+                ref={avatarRef}
                 onClick={() => setIsMenu((prev) => !prev)}
               >
                 <Image
@@ -72,19 +75,21 @@ export default function Nav() {
               >
                 {isLoading ? (
                   <>
-                    <FaHourglassHalf /> Signing
+                    <MdHourglassEmpty /> Logging
                   </>
                 ) : (
                   <>
-                    <FaSignInAlt /> Sign In
+                    <MdLogin /> Log In
                   </>
                 )}
               </button>
             )}
+            {isMenu ? (
+              <ProfileMenu setIsMenu={setIsMenu} avatarRef={avatarRef} />
+            ) : null}
           </li>
         </ul>
       </div>
-      {isMenu ? <ProfileMenu setIsMenu={setIsMenu} /> : null}
     </nav>
   )
 }

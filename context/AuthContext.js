@@ -1,5 +1,6 @@
 import FullLoading from '@/components/FullLoading'
 import { auth } from '@/lib/firebase'
+import { AUTH_READY } from '@/reducers/actions'
 import AuthReducer from '@/reducers/authReducer'
 import { onAuthStateChanged } from 'firebase/auth'
 
@@ -19,7 +20,7 @@ export default function AuthContextProvider({ children }) {
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
-      dispatch({ type: 'AUTHREADY', payload: user })
+      dispatch({ type: AUTH_READY, payload: user })
     })
 
     return () => unsub()
