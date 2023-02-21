@@ -1,7 +1,7 @@
 import { useAuth } from '@/context/AuthContext'
 import { giveVote, handleDelete, handleShare } from '@/utils/helper'
 import { useState } from 'react'
-import { MdDeleteOutline, MdOutlineIosShare } from 'react-icons/md'
+import { MdDeleteOutline, MdDoneAll, MdOutlineIosShare } from 'react-icons/md'
 import Option from './option'
 import s from './pollcard.module.css'
 import ImageScroller from '../ImageScroller'
@@ -77,7 +77,11 @@ export default function PollCard({ data, isOwn, isSingle }) {
           ))}
       </div>
       <div className={s.pollCard_bottomDiv}>
-        {selected && !isResult ? (
+        {isResult ? (
+          <p className={s.given}>
+            <MdDoneAll /> Already Voted
+          </p>
+        ) : selected ? (
           <>
             <button
               disabled={isLoading}
