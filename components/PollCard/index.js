@@ -1,14 +1,7 @@
 import { useAuth } from '@/context/AuthContext'
 import { giveVote, handleDelete, handleShare } from '@/utils/helper'
 import { useState } from 'react'
-import {
-  MdDeleteOutline,
-  MdOutlineDelete,
-  MdOutlineDeleteOutline,
-  MdOutlineIosShare,
-} from 'react-icons/md'
-import { AiOutlineDelete } from 'react-icons/ai'
-
+import { MdDeleteOutline, MdOutlineIosShare } from 'react-icons/md'
 import Option from './option'
 import s from './pollcard.module.css'
 import ImageScroller from '../ImageScroller'

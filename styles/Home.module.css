@@ -8,4 +8,44 @@
   width: 100%;
   border-radius: 0.7rem;
   color: var(--color-primary);
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.loadMoreBtn:disabled {
+  color: black;
+  border-color: #6c6c6c;
+}
+
+.loadMoreBtn svg {
+  margin-bottom: -0.1rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.loadMoreBtn:not(:disabled):active svg {
+  transform: rotateZ(360deg);
+}
+.loadMoreBtn:not(:disabled):active {
+  background-color: hsl(192, 72%, 97%);
+}
+
+.noMorePolls {
+  color: var(--color-text-light);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+@media (hover: hover) {
+  .loadMoreBtn:not(:disabled):hover {
+    color: hsl(192, 52%, 30%);
+    border-color: hsl(192, 52%, 30%);
+    background-color: hsl(192, 72%, 99%);
+  }
+  .loadMoreBtn:not(:disabled):active {
+    background-color: hsl(192, 72%, 96%);
+  }
+  .loadMoreBtn:not(:disabled):active svg {
+    transform: rotateZ(360deg);
+  }
 }

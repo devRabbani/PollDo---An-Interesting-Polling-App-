@@ -14,7 +14,7 @@ export default function Poll() {
 
   const { data, isLoading } = usePollData(pollid)
 
-  if (!data) {
+  if (!isLoading && !data) {
     return <Error404 />
   }
 

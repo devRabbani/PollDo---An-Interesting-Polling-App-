@@ -80,7 +80,7 @@ export const giveVote = async (
   dispatch
 ) => {
   if (!uid) {
-    toast.error(<b>Login first</b>)
+    toast.error(<b>You need to Login first!!</b>)
     return
   }
   const id = toast.loading(<b>Submiting..</b>)

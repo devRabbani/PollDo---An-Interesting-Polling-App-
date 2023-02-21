@@ -31,11 +31,17 @@ export default function Home() {
               ))}
             </div>
             {hasMore ? (
-              <button onClick={loadMore} className={s.loadMoreBtn}>
-                <AiOutlineReload /> {btnLoading ? 'Loading' : 'load'}
+              <button
+                onClick={loadMore}
+                disabled={btnLoading}
+                className={s.loadMoreBtn}
+              >
+                <AiOutlineReload /> {btnLoading ? 'Loading Wait' : 'Load More'}
               </button>
             ) : (
-              <p>No More Poll</p>
+              <p className={s.noMorePolls}>
+                Congrats You are at the end, No More Polls left
+              </p>
             )}
           </>
         )}
