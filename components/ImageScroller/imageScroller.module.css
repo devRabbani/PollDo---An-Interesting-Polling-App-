@@ -1,6 +1,6 @@
 .imageScroller {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   gap: 1rem;
 }
 
