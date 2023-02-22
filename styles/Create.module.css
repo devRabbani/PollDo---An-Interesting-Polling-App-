@@ -55,6 +55,7 @@
 .labelDiv svg {
   color: var(--color-danger);
   font-size: 2rem;
+  cursor: pointer;
 }
 
 /* For Btn Margin */
