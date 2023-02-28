@@ -57,7 +57,7 @@ export default function PollCard({ data, isOwn, isSingle }) {
           <MdOutlineIosShare /> {isSharing ? 'sharing' : 'share this'}
         </button>
       </div>
-      <h3>Q. {question}</h3>
+      <h3 className={question ? null : s.noQuestion}>Q. {question}</h3>
       {images?.length ? (
         <ImageScroller images={images.sort((a, b) => a.option - b.option)} />
       ) : null}
