@@ -11,7 +11,10 @@ export default function ImageScroller({ images, removeImage, edit }) {
     <>
       <div className={s.imageScroller}>
         {images.map((image, i) => (
-          <div className={s.img} key={i}>
+          <div
+            className={`${s.img} ${images?.length === 1 ? s.fullWidth : null}`}
+            key={i}
+          >
             <Image
               src={image.img}
               alt="Options"

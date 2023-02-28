@@ -54,7 +54,7 @@ export default function Create() {
   // Handle Submit
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (!question.trim().length) {
+    if (!question.trim().length && !attachments?.length) {
       toast.error(<b>Enter a valid poll question!</b>)
       return
     }
