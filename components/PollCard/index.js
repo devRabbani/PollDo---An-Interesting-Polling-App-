@@ -6,8 +6,9 @@ import Option from './option'
 import s from './pollcard.module.css'
 import ImageScroller from '../ImageScroller'
 import { usePolls } from '@/context/PollsContext'
+import { UPDATE_POLL_STATE } from '@/reducers/actions'
 
-export default function PollCard({ data, isOwn, isSingle }) {
+export default function PollCard({ data, isOwn, isRealtime }) {
   const { question, options, given, createdBy, privacy, pollid, images } =
     data ?? {}
 
@@ -27,6 +28,15 @@ export default function PollCard({ data, isOwn, isSingle }) {
   const [isLoading, setIsLoading] = useState(false)
   const [isSharing, setIsSharing] = useState(false)
   const [isDeleting, setIsDeleting] = useState(false)
+
+  // function to update local states when not realtime
+  const handleStateUpdate = () => {
+    !isRealtime &&
+      dispatch({
+        type: UPDATE_POLL_STATE,
+        payload: { uid: user?.uid, selected, pollid },
+      })
+  }
 
   return (
     <div className={s.pollCard}>
@@ -91,8 +101,7 @@ export default function PollCard({ data, isOwn, isSingle }) {
                   user?.uid,
                   selected,
                   setIsLoading,
-                  dispatch,
-                  isSingle
+                  handleStateUpdate
                 )
               }
               className={s.submitBtn}

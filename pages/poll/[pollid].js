@@ -30,7 +30,7 @@ export default function Poll() {
         ) : (
           <>
             <p>Poll Id : {pollid}</p>
-            <PollCard data={data} isSingle={true} />
+            <PollCard data={data} isRealtime={true} />
           </>
         )}
       </div>
