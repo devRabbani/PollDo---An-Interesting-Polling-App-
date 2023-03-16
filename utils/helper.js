@@ -1,5 +1,4 @@
 import { db, storage } from '@/lib/firebase'
-import { UPDATE_POLL_STATE } from '@/reducers/actions'
 import {
   arrayUnion,
   collection,
@@ -77,8 +76,7 @@ export const giveVote = async (
   uid,
   selected,
   setIsLoading,
-  dispatch,
-  isSingle
+  handleStateUpdate
 ) => {
   if (!uid) {
     toast.error(<b>You need to Login first!!</b>)
@@ -93,8 +91,7 @@ export const giveVote = async (
       given: arrayUnion(uid),
       ['options.' + selected]: increment(1),
     })
-    !isSingle &&
-      dispatch({ type: UPDATE_POLL_STATE, payload: { uid, selected, pollid } })
+    handleStateUpdate()
     setIsLoading(false)
     toast.success(<b>Submitted Successfully</b>, { id })
   } catch (error) {

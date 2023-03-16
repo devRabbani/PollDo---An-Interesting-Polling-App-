@@ -58,6 +58,14 @@ export default function Create() {
       toast.error(<b>Enter a valid poll question!</b>)
       return
     }
+
+    const check = [...new Set(options.map((item) => item.trim()))]
+
+    if (check?.length === 1) {
+      toast.error(<b>Minimum two unique options required!</b>)
+      return
+    }
+
     setIsCreating(true)
     const id = toast.loading(<b>Creating Poll Please Wait</b>)
     try {
