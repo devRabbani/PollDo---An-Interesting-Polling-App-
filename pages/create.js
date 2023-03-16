@@ -59,12 +59,10 @@ export default function Create() {
       return
     }
 
-    const duplicate = options.map((item) => item.trim())
+    const check = [...new Set(options.map((item) => item.trim()))]
 
-    const check = [...new Set(duplicate)]
-
-    if (check.length !== duplicate.length) {
-      toast.error(<b>Options must be unique!</b>);
+    if (check?.length === 1) {
+      toast.error(<b>Minimum two unique options required!</b>)
       return
     }
 
