@@ -25,10 +25,10 @@ export default function Document() {
         />
         <meta property="og:title" content="PollDoh" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://polldoh.vercel.app/" />
+        <meta property="og:url" content="https://polldoh.canwebe.in/" />
         <meta
           property="og:image"
-          content="https://polldoh.vercel.app/android-chrome-512x512.png"
+          content="https://polldoh.canwebe.in/android-chrome-512x512.png"
         />
         <meta
           property="og:description"
@@ -42,7 +42,7 @@ export default function Document() {
         />
         <meta
           name="twitter:image"
-          content="https://polldoh.vercel.app/android-chrome-512x512.png"
+          content="https://polldoh.canwebe.in/android-chrome-512x512.png"
         />
         <meta name="twitter:card" content="summary_large_image" />
 

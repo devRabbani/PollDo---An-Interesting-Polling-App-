@@ -11,7 +11,7 @@ export default function Credits() {
           and Firebase. CWB&apos;s Developers build this kind of projects so
           enjoy this now and if you want to see more works like this checkout{' '}
           <a
-            href="https://canwebe.tech"
+            href="https://www.canwebe.in"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -22,7 +22,7 @@ export default function Credits() {
         <p className={s.footer}>
           All rights are resrved{' '}
           <a
-            href="https://canwebe.tech"
+            href="https://www.canwebe.in"
             target="_blank"
             rel="noopener noreferrer"
           >

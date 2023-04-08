@@ -58,7 +58,7 @@ export default function PollCard({ data, isOwn, isRealtime }) {
           onClick={() =>
             handleShare(
               question,
-              `https://polldoh.vercel.app/poll/` + pollid,
+              `https://polldoh.canwebe.in/poll/` + pollid,
               setIsSharing
             )
           }

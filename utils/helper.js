@@ -110,7 +110,7 @@ export const handleShare = async (text, url, setIsSharing) => {
     setIsSharing(true)
     const shareData = {
       title: 'Checkout this poll on PollDoh',
-      url: url || 'https://polldoh.vercel.app',
+      url: url || 'https://polldoh.canwebe.in',
       text: text || 'Click the link to get to the poll',
     }
     await navigator.share(shareData)
